@@ -1,0 +1,23 @@
+import 'dart:convert';
+import 'package:flutter/services.dart';
+
+abstract class ConfigReader {
+  static late Map<String, dynamic> _config;
+
+  static Future<void> initialize() async {
+    final configString = await rootBundle.loadString('assets/config/app_config.json');
+    _config = json.decode(configString) as Map<String, dynamic>;
+  }
+
+  static String appName() {
+    return _config['appName'] as String;
+  }
+
+  static String apiUrl() {
+    return _config['apiUrl'] as String;
+  }
+
+  static String fotoSolicitacao(int id, String extensao) {
+    return _config['apiUrl'] + '/static/fotos/solicitacoes/$id.$extensao';
+  }
+}
