@@ -1,16 +1,14 @@
-# starter
+## Instruções para execução
 
-A new Flutter project.
+### Requisitos
+- Flutter 3.13.4
+- Dart 3.1.2
+- Android SDK version 30.0.3
 
-## Getting Started
+1. Editar arquivo "assets\config\app_config.json" alterando a chave apiUrl para a url onde o backend está sendo executado
 
-This project is a starting point for a Flutter application.
+2. Compilar o projeto
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+$ flutter build apk
+```
