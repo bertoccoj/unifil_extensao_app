@@ -13,7 +13,7 @@ _$_SolicitacaoRaw _$$_SolicitacaoRawFromJson(Map<String, dynamic> json) =>
       updatedAt: json['updatedAt'] as String?,
       tipo: json['tipo'] as int,
       status: json['status'] as int,
-      userId: json['userId'] as int,
+      userId: json['userId'] as int?,
       descricao: json['descricao'] as String,
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),

@@ -9,6 +9,7 @@ import 'package:minha_cidade/domain/localizacao/posicao.dart';
 import 'package:minha_cidade/domain/solicitacao/criar_solicitacao_payload.dart';
 import 'package:minha_cidade/domain/solicitacao/solicitacao.dart';
 import 'package:minha_cidade/generated/assets.gen.dart';
+import 'package:minha_cidade/generated/l10n.dart';
 import 'package:minha_cidade/injection.dart';
 import 'package:minha_cidade/presentation/core/widgets/loader.dart';
 import 'package:minha_cidade/presentation/core/widgets/outline_button.dart';
@@ -67,12 +68,12 @@ class _CriarSolicitacaoPageBodyState extends State<CriarSolicitacaoPageBody> wit
     showWaitLoading();
     final result = await locationService.getPosicaoAtual();
     hideWaitLoading();
-    setPosicao(result, 'Erro ao setar posição atual');
+    setPosicao(result, S.current.locationErrorCurrentPosition);
   }
 
   void selecionarPosicaoNoMapa() async {
     final result = await locationService.selecionarPosicaoNoMapa(context, initial: posicao);
-    setPosicao(result, 'Posição não selecionada');
+    setPosicao(result, S.current.locationErrorPositionNotSelected);
   }
 
   void getImate(ImageSource source) async {

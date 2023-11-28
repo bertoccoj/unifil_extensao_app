@@ -18,4 +18,5 @@ class AuthEvent with _$AuthEvent {
   }) = _ResetPassword;
 
   const factory AuthEvent.logout() = _Logout;
+  const factory AuthEvent.authenticate() = _Authenticate;
 }

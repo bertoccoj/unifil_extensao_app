@@ -20,7 +20,10 @@ class LoginPage extends StatefulWidget implements AutoRouteWrapper {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthBloc>(
-          create: (_) => getIt<AuthBloc>(),
+          create: (_) => getIt<AuthBloc>()
+            ..add(
+              const AuthEvent.authenticate(),
+            ),
         ),
       ],
       child: this,
@@ -34,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
   late Completer<String?> _recoverPasswordCompleter;
 
   Future<String?> onLogin(LoginData data) async {
-    _loginCompleter = Completer<String>();
+    _loginCompleter = Completer<String?>();
     context.read<AuthBloc>().add(
           AuthEvent.login(
             email: data.name,
@@ -45,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<String?> onSignup(SignupData data) async {
-    _signupCompleter = Completer<String>();
+    _signupCompleter = Completer<String?>();
     final password = data.password;
     final email = data.name;
     final name = data.additionalSignupData?['name'];
@@ -63,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<String?> onRecoverPassword(String email) async {
-    _recoverPasswordCompleter = Completer<String>();
+    _recoverPasswordCompleter = Completer<String?>();
     return _recoverPasswordCompleter.future;
   }
 
@@ -75,6 +78,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) => state.whenOrNull(
+        authenticateSuccess: navigateToHome,
         loginSuccess: () {
           _loginCompleter.complete(null);
           navigateToHome();
@@ -99,6 +103,16 @@ class _LoginPageState extends State<LoginPage> {
         onLogin: onLogin,
         onRecoverPassword: onRecoverPassword,
         onSignup: onSignup,
+        messages: LoginMessages(
+          loginButton: 'Iniciar',
+          userHint: 'Email',
+          passwordHint: 'Senha',
+          confirmPasswordHint: 'Confirmar senha',
+          signupButton: 'Registrar',
+          additionalSignUpFormDescription: 'Insira seu nome para completar o registro',
+          additionalSignUpSubmitButton: 'Finalizar cadastro',
+          goBackButton: 'Voltar',
+        ),
         hideForgotPasswordButton: true,
         additionalSignupFields: const [
           UserFormField(

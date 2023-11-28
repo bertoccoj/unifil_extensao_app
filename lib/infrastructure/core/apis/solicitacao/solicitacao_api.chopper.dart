@@ -17,7 +17,7 @@ class _$SolicitacaoApi extends SolicitacaoApi {
   final definitionType = SolicitacaoApi;
 
   @override
-  Future<Response<List<SolicitacaoRaw>>> list({
+  Future<Response<List<SolicitacaoRaw>>> index({
     int? tipo,
     int? status,
     double? latitude,
@@ -27,7 +27,7 @@ class _$SolicitacaoApi extends SolicitacaoApi {
     int? estadoId,
     int? userId,
   }) {
-    final String $url = '/solicitacao';
+    final Uri $url = Uri.parse('/solicitacao');
     final Map<String, dynamic> $params = <String, dynamic>{
       'tipo': tipo,
       'status': status,
@@ -49,7 +49,7 @@ class _$SolicitacaoApi extends SolicitacaoApi {
 
   @override
   Future<Response<SolicitacaoRaw>> details(int id) {
-    final String $url = '/solicitacao/${id}';
+    final Uri $url = Uri.parse('/solicitacao/${id}');
     final Request $request = Request(
       'GET',
       $url,
@@ -66,7 +66,7 @@ class _$SolicitacaoApi extends SolicitacaoApi {
     double longitude,
     String image,
   ) {
-    final String $url = '/solicitacao';
+    final Uri $url = Uri.parse('/solicitacao');
     final Map<String, String> $headers = {
       'Content-Type': 'application/x-www-form-urlencoded',
     };

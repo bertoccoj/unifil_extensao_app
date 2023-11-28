@@ -20,7 +20,7 @@ class LocationService {
       }
     }
     final data = await location.getLocation();
-    return right(Posicao(latitude: data.latitude, longitude: data.longitude));
+    return right(Posicao(latitude: data.latitude!, longitude: data.longitude!));
   }
 
   Future<Either<String, Posicao>> selecionarPosicaoNoMapa(BuildContext context, {Posicao? initial}) async {

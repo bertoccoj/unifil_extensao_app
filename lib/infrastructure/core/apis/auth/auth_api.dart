@@ -28,7 +28,7 @@ abstract class AuthApi extends ChopperService {
   @factoryMethod
   static AuthApi create() {
     return ChopperClient(
-      baseUrl: ConfigReader.apiUrl(),
+      baseUrl: Uri.parse(ConfigReader.apiUrl()),
       services: [
         _$AuthApi(),
       ],

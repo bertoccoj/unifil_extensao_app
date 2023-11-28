@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'solicitacao_raw.dart';
 
@@ -25,7 +25,7 @@ mixin _$SolicitacaoRaw {
   String? get updatedAt => throw _privateConstructorUsedError;
   int get tipo => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
-  int get userId => throw _privateConstructorUsedError;
+  int? get userId => throw _privateConstructorUsedError;
   String get descricao => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ abstract class $SolicitacaoRawCopyWith<$Res> {
       String? updatedAt,
       int tipo,
       int status,
-      int userId,
+      int? userId,
       String descricao,
       double latitude,
       double longitude,
@@ -80,7 +80,7 @@ class _$SolicitacaoRawCopyWithImpl<$Res, $Val extends SolicitacaoRaw>
     Object? updatedAt = freezed,
     Object? tipo = null,
     Object? status = null,
-    Object? userId = null,
+    Object? userId = freezed,
     Object? descricao = null,
     Object? latitude = null,
     Object? longitude = null,
@@ -110,10 +110,10 @@ class _$SolicitacaoRawCopyWithImpl<$Res, $Val extends SolicitacaoRaw>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as int,
-      userId: null == userId
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       descricao: null == descricao
           ? _value.descricao
           : descricao // ignore: cast_nullable_to_non_nullable
@@ -160,7 +160,7 @@ abstract class _$$_SolicitacaoRawCopyWith<$Res>
       String? updatedAt,
       int tipo,
       int status,
-      int userId,
+      int? userId,
       String descricao,
       double latitude,
       double longitude,
@@ -186,7 +186,7 @@ class __$$_SolicitacaoRawCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? tipo = null,
     Object? status = null,
-    Object? userId = null,
+    Object? userId = freezed,
     Object? descricao = null,
     Object? latitude = null,
     Object? longitude = null,
@@ -216,10 +216,10 @@ class __$$_SolicitacaoRawCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as int,
-      userId: null == userId
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       descricao: null == descricao
           ? _value.descricao
           : descricao // ignore: cast_nullable_to_non_nullable
@@ -286,7 +286,7 @@ class _$_SolicitacaoRaw implements _SolicitacaoRaw {
   @override
   final int status;
   @override
-  final int userId;
+  final int? userId;
   @override
   final String descricao;
   @override
@@ -296,6 +296,7 @@ class _$_SolicitacaoRaw implements _SolicitacaoRaw {
   final Map<String, dynamic> _cidade;
   @override
   Map<String, dynamic> get cidade {
+    if (_cidade is EqualUnmodifiableMapView) return _cidade;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(_cidade);
   }
@@ -303,6 +304,7 @@ class _$_SolicitacaoRaw implements _SolicitacaoRaw {
   final Map<String, dynamic> _estado;
   @override
   Map<String, dynamic> get estado {
+    if (_estado is EqualUnmodifiableMapView) return _estado;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(_estado);
   }
@@ -383,7 +385,7 @@ abstract class _SolicitacaoRaw implements SolicitacaoRaw {
       final String? updatedAt,
       required final int tipo,
       required final int status,
-      required final int userId,
+      required final int? userId,
       required final String descricao,
       required final double latitude,
       required final double longitude,
@@ -406,7 +408,7 @@ abstract class _SolicitacaoRaw implements SolicitacaoRaw {
   @override
   int get status;
   @override
-  int get userId;
+  int? get userId;
   @override
   String get descricao;
   @override

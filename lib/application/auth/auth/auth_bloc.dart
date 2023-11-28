@@ -17,6 +17,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_Logout>(_handleLogout);
     on<_Register>(_handleRegister);
     on<_ResetPassword>(_handleResetPassword);
+    on<_Authenticate>(_handleAuthenticate);
   }
 
   _handleLogin(_Login event, Emitter emit) async {
@@ -58,6 +59,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     result.fold(
       (l) => emit(AuthState.resetPasswordFailed(l)),
       (r) => emit(const AuthState.resetPasswordSuccess()),
+    );
+  }
+
+  _handleAuthenticate(_Authenticate event, Emitter emit) async {
+    final result = await _authFacade.getUser();
+
+    result.fold(
+      (l) => emit(AuthState.authenticateFailed(l)),
+      (r) => emit(const AuthState.authenticateSuccess()),
     );
   }
 }

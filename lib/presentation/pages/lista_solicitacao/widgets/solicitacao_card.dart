@@ -34,7 +34,10 @@ class SolicitacaoCard extends StatelessWidget {
           SizedBox(
             height: 150,
             width: double.infinity,
-            child: CachedImage(url: solicitacao.urlFoto, onClick: onImageClick),
+            child: CachedImage(
+              url: solicitacao.urlFoto,
+              onClick: onImageClick,
+            ),
           ),
           ListTile(
             title: Text(

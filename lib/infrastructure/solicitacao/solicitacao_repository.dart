@@ -27,7 +27,7 @@ class SolicitacaoRepository implements ISolicitacaoRepository {
         userId = user.fold((l) => null, (r) => r.id);
       }
 
-      var result = await _solicitacaoApi.list(
+      var result = await _solicitacaoApi.index(
         bairroId: filtro?.bairro?.id,
         cidadeId: filtro?.cidade?.id,
         estadoId: filtro?.estado?.id,
@@ -35,7 +35,7 @@ class SolicitacaoRepository implements ISolicitacaoRepository {
         tipo: filtro?.tipo?.value,
         latitude: filtro?.posicao?.latitude,
         longitude: filtro?.posicao?.longitude,
-        // userId: userId,
+        userId: userId,
       );
       if (!result.isSuccessful) {
         return left(SolicitacaoFailure.erroAoCarregarLista());

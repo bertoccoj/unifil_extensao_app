@@ -43,6 +43,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Iluminação Pública"),
         "eTipoSolicitacaoOutros":
             MessageLookupByLibrary.simpleMessage("Outros"),
+        "failureRetry":
+            MessageLookupByLibrary.simpleMessage("Tentar Novamente"),
+        "filterPageAllOption": MessageLookupByLibrary.simpleMessage("Todos"),
+        "filterPageLocation":
+            MessageLookupByLibrary.simpleMessage("localização"),
+        "filterPageOnlyCUrrentUser": MessageLookupByLibrary.simpleMessage(
+            "Apenas solicitações abertas por min"),
+        "filterPageStatus": MessageLookupByLibrary.simpleMessage("Status"),
+        "filterPageTitle":
+            MessageLookupByLibrary.simpleMessage("Selecionar filtros"),
+        "filterPageType": MessageLookupByLibrary.simpleMessage("Tipo"),
         "listaSolicitacaoCriadoEm":
             MessageLookupByLibrary.simpleMessage("Criado em:"),
         "listaSolicitacaoDescricao":
@@ -55,6 +66,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Status:"),
         "listaSolicitacaoVerDetalhes":
             MessageLookupByLibrary.simpleMessage("Ver detalhes"),
+        "locationErrorCurrentPosition":
+            MessageLookupByLibrary.simpleMessage("Erro ao star posição atual"),
+        "locationErrorPositionNotSelected":
+            MessageLookupByLibrary.simpleMessage("Posição não selecionada"),
+        "locationLatitude": MessageLookupByLibrary.simpleMessage("Latitude"),
+        "locationLongitude": MessageLookupByLibrary.simpleMessage("Longitude"),
+        "locationSelectOnMap":
+            MessageLookupByLibrary.simpleMessage("Selecionar no mapa"),
+        "locationUseCurrentPosition": MessageLookupByLibrary.simpleMessage(
+            "Utilizar minha localização atual"),
         "shortDateFormat":
             MessageLookupByLibrary.simpleMessage("dd/MM/yyyy hh:mm")
       };

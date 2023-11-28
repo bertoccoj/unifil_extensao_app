@@ -10,7 +10,7 @@ part 'solicitacao_api.chopper.dart';
 @ChopperApi(baseUrl: '/solicitacao')
 abstract class SolicitacaoApi extends ChopperService {
   @Get()
-  Future<Response<List<SolicitacaoRaw>>> list({
+  Future<Response<List<SolicitacaoRaw>>> index({
     @Query() int? tipo,
     @Query() int? status,
     @Query() double? latitude,
@@ -38,7 +38,7 @@ abstract class SolicitacaoApi extends ChopperService {
 
   static SolicitacaoApi create([ChopperClient? client]) {
     final chopper = ChopperClient(
-      baseUrl: ConfigReader.apiUrl(),
+      baseUrl: Uri.parse(ConfigReader.apiUrl()),
       services: [
         _$SolicitacaoApi(),
       ],

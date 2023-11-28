@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:minha_cidade/application/solicitacao/solicitacao_actor/solicitacao_actor_bloc.dart';
 import 'package:minha_cidade/presentation/pages/lista_solicitacao/widgets/solicitacao_card.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 import '../../../../application/solicitacao/solicitacoes/solicitacoes_cubit.dart';
 import '../../../../domain/localizacao/posicao.dart';
@@ -13,9 +13,14 @@ import '../../../core/widgets/failure_viewer.dart';
 import '../../../router/app_router.gr.dart';
 
 class ListSolicitacaoBody extends StatelessWidget {
-  final void Function(RefreshController controller) onRefresh;
+  final void Function() onRetry;
 
-  const ListSolicitacaoBody({Key? key, required this.onRefresh}) : super(key: key);
+  const ListSolicitacaoBody({Key? key, required this.onRetry}) : super(key: key);
+
+  _onRefresh(RefreshController controller) {
+    onRetry();
+    controller.refreshCompleted();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +31,16 @@ class ListSolicitacaoBody extends StatelessWidget {
           loading: () => const Center(child: CircularProgressIndicator()),
           loadSuccess: (solicitacoes) => solicitacoes.isEmpty
               ? NenhumaSolicitacaoEncontrada(
-                  onRefresh: onRefresh,
+                  onRefresh: _onRefresh,
                 )
               : SolicitacoesListView(
                   solicitacoes: solicitacoes,
-                  onRefresh: onRefresh,
+                  onRefresh: _onRefresh,
                 ),
-          loadFailed: (failure) => FailureViewer(failure: failure),
+          loadFailed: (failure) => FailureViewer(
+            failure: failure,
+            onRetry: onRetry,
+          ),
         );
       },
     );
@@ -74,7 +82,7 @@ class _SolicitacoesListViewState extends State<SolicitacoesListView> {
   Widget build(BuildContext context) {
     return SmartRefresher(
       enablePullDown: true,
-      enablePullUp: true,
+      enablePullUp: false,
       onRefresh: () => widget.onRefresh(_refreshController),
       controller: _refreshController,
       child: ListView.builder(

@@ -46,7 +46,6 @@ class _ProfilePageState extends State<ProfilePage> {
             return null;
           },
           logoutFailed: (failure) {
-            // todo show snackbar
             return null;
           },
         ),

@@ -11,77 +11,121 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i8;
-import 'package:flutter/material.dart' as _i9;
+import 'package:auto_route/auto_route.dart' as _i9;
+import 'package:flutter/material.dart' as _i10;
 
-import '../../domain/localizacao/posicao.dart' as _i10;
-import '../core/widgets/ver_foto.dart' as _i4;
-import '../pages/criar_solicitacao/criar_soliciatacao_page.dart' as _i3;
-import '../pages/criar_solicitacao/widgets/selecionar_localizacao.dart' as _i7;
-import '../pages/detalhes_solicitacao/detalhes_solicitacao_page.dart' as _i2;
-import '../pages/lista_solicitacao/lista_solicitacao_page.dart' as _i1;
-import '../pages/login/login_page.dart' as _i6;
-import '../pages/profile/profile_page.dart' as _i5;
+import '../../domain/localizacao/posicao.dart' as _i11;
+import '../../domain/solicitacao/filtro_solicitacoes.dart' as _i12;
+import '../core/widgets/ver_foto.dart' as _i6;
+import '../pages/criar_solicitacao/criar_soliciatacao_page.dart' as _i5;
+import '../pages/criar_solicitacao/widgets/selecionar_localizacao.dart' as _i8;
+import '../pages/detalhes_solicitacao/detalhes_solicitacao_page.dart' as _i4;
+import '../pages/filter/filter_page.dart' as _i3;
+import '../pages/lista_solicitacao/lista_solicitacao_page.dart' as _i2;
+import '../pages/login/login_page.dart' as _i1;
+import '../pages/profile/profile_page.dart' as _i7;
 
-class AppRouter extends _i8.RootStackRouter {
-  AppRouter([_i9.GlobalKey<_i9.NavigatorState>? navigatorKey])
+class AppRouter extends _i9.RootStackRouter {
+  AppRouter([_i10.GlobalKey<_i10.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i8.PageFactory> pagesMap = {
-    ListaSolicitacaoPageRoute.name: (routeData) {
-      return _i8.CustomPage<dynamic>(
+  final Map<String, _i9.PageFactory> pagesMap = {
+    LoginPageRoute.name: (routeData) {
+      final args = routeData.argsAs<LoginPageRouteArgs>(
+          orElse: () => const LoginPageRouteArgs());
+      return _i9.CustomPage<dynamic>(
         routeData: routeData,
-        child: _i8.WrappedRoute(child: const _i1.ListaSolicitacaoPage()),
+        child: _i9.WrappedRoute(child: _i1.LoginPage(key: args.key)),
+        transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 100,
+        reverseDurationInMilliseconds: 100,
+        opaque: true,
+        barrierDismissible: false,
+      );
+    },
+    ListaSolicitacaoPageRoute.name: (routeData) {
+      final args = routeData.argsAs<ListaSolicitacaoPageRouteArgs>(
+          orElse: () => const ListaSolicitacaoPageRouteArgs());
+      return _i9.CustomPage<dynamic>(
+        routeData: routeData,
+        child: _i9.WrappedRoute(child: _i2.ListaSolicitacaoPage(key: args.key)),
+        transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 100,
+        reverseDurationInMilliseconds: 100,
+        opaque: true,
+        barrierDismissible: false,
+      );
+    },
+    FilterPageRoute.name: (routeData) {
+      final args = routeData.argsAs<FilterPageRouteArgs>(
+          orElse: () => const FilterPageRouteArgs());
+      return _i9.CustomPage<_i3.FilterResult>(
+        routeData: routeData,
+        child: _i3.FilterPage(
+          key: args.key,
+          initial: args.initial,
+        ),
+        transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 100,
+        reverseDurationInMilliseconds: 100,
         opaque: true,
         barrierDismissible: false,
       );
     },
     DetalhesSolicitacaoPageRoute.name: (routeData) {
       final args = routeData.argsAs<DetalhesSolicitacaoPageRouteArgs>();
-      return _i8.CustomPage<dynamic>(
+      return _i9.CustomPage<dynamic>(
         routeData: routeData,
-        child: _i8.WrappedRoute(
-            child: _i2.DetalhesSolicitacaoPage(
+        child: _i9.WrappedRoute(
+            child: _i4.DetalhesSolicitacaoPage(
           key: args.key,
           solicitacaoId: args.solicitacaoId,
         )),
+        transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 100,
+        reverseDurationInMilliseconds: 100,
         opaque: true,
         barrierDismissible: false,
       );
     },
     CriarSolicitacaoPageRoute.name: (routeData) {
-      return _i8.CustomPage<dynamic>(
+      final args = routeData.argsAs<CriarSolicitacaoPageRouteArgs>(
+          orElse: () => const CriarSolicitacaoPageRouteArgs());
+      return _i9.CustomPage<dynamic>(
         routeData: routeData,
-        child: _i8.WrappedRoute(child: const _i3.CriarSolicitacaoPage()),
+        child: _i9.WrappedRoute(child: _i5.CriarSolicitacaoPage(key: args.key)),
+        transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 100,
+        reverseDurationInMilliseconds: 100,
         opaque: true,
         barrierDismissible: false,
       );
     },
     VerFotoPageRoute.name: (routeData) {
       final args = routeData.argsAs<VerFotoPageRouteArgs>();
-      return _i8.CustomPage<dynamic>(
+      return _i9.CustomPage<dynamic>(
         routeData: routeData,
-        child: _i4.VerFotoPage(
+        child: _i6.VerFotoPage(
           key: args.key,
           provider: args.provider,
         ),
+        transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 100,
+        reverseDurationInMilliseconds: 100,
         opaque: true,
         barrierDismissible: false,
       );
     },
     ProfilePageRoute.name: (routeData) {
-      return _i8.CustomPage<dynamic>(
+      final args = routeData.argsAs<ProfilePageRouteArgs>(
+          orElse: () => const ProfilePageRouteArgs());
+      return _i9.CustomPage<dynamic>(
         routeData: routeData,
-        child: _i8.WrappedRoute(child: const _i5.ProfilePage()),
-        opaque: true,
-        barrierDismissible: false,
-      );
-    },
-    LoginPageRoute.name: (routeData) {
-      return _i8.CustomPage<dynamic>(
-        routeData: routeData,
-        child: _i8.WrappedRoute(child: const _i6.LoginPage()),
+        child: _i9.WrappedRoute(child: _i7.ProfilePage(key: args.key)),
+        transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 100,
+        reverseDurationInMilliseconds: 100,
         opaque: true,
         barrierDismissible: false,
       );
@@ -89,43 +133,52 @@ class AppRouter extends _i8.RootStackRouter {
     SelecionarLocalizacaoPageRoute.name: (routeData) {
       final args = routeData.argsAs<SelecionarLocalizacaoPageRouteArgs>(
           orElse: () => const SelecionarLocalizacaoPageRouteArgs());
-      return _i8.MaterialPageX<_i10.Posicao>(
+      return _i9.CustomPage<_i11.Posicao>(
         routeData: routeData,
-        child: _i7.SelecionarLocalizacaoPage(
+        child: _i8.SelecionarLocalizacaoPage(
           key: args.key,
           posicao: args.posicao,
         ),
+        transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 100,
+        reverseDurationInMilliseconds: 100,
+        opaque: true,
+        barrierDismissible: false,
       );
     },
   };
 
   @override
-  List<_i8.RouteConfig> get routes => [
-        _i8.RouteConfig(
-          ListaSolicitacaoPageRoute.name,
-          path: '/lista-solicitacao-page',
-        ),
-        _i8.RouteConfig(
-          DetalhesSolicitacaoPageRoute.name,
-          path: '/detalhes-solicitacao-page',
-        ),
-        _i8.RouteConfig(
-          CriarSolicitacaoPageRoute.name,
-          path: '/criar-solicitacao-page',
-        ),
-        _i8.RouteConfig(
-          VerFotoPageRoute.name,
-          path: '/ver-foto-page',
-        ),
-        _i8.RouteConfig(
-          ProfilePageRoute.name,
-          path: '/profile-page',
-        ),
-        _i8.RouteConfig(
+  List<_i9.RouteConfig> get routes => [
+        _i9.RouteConfig(
           LoginPageRoute.name,
           path: '/',
         ),
-        _i8.RouteConfig(
+        _i9.RouteConfig(
+          ListaSolicitacaoPageRoute.name,
+          path: '/lista-solicitacao-page',
+        ),
+        _i9.RouteConfig(
+          FilterPageRoute.name,
+          path: '/filter-page',
+        ),
+        _i9.RouteConfig(
+          DetalhesSolicitacaoPageRoute.name,
+          path: '/detalhes-solicitacao-page',
+        ),
+        _i9.RouteConfig(
+          CriarSolicitacaoPageRoute.name,
+          path: '/criar-solicitacao-page',
+        ),
+        _i9.RouteConfig(
+          VerFotoPageRoute.name,
+          path: '/ver-foto-page',
+        ),
+        _i9.RouteConfig(
+          ProfilePageRoute.name,
+          path: '/profile-page',
+        ),
+        _i9.RouteConfig(
           SelecionarLocalizacaoPageRoute.name,
           path: '/selecionar-localizacao-page',
         ),
@@ -133,23 +186,94 @@ class AppRouter extends _i8.RootStackRouter {
 }
 
 /// generated route for
-/// [_i1.ListaSolicitacaoPage]
-class ListaSolicitacaoPageRoute extends _i8.PageRouteInfo<void> {
-  const ListaSolicitacaoPageRoute()
+/// [_i1.LoginPage]
+class LoginPageRoute extends _i9.PageRouteInfo<LoginPageRouteArgs> {
+  LoginPageRoute({InvalidType key})
+      : super(
+          LoginPageRoute.name,
+          path: '/',
+          args: LoginPageRouteArgs(key: key),
+        );
+
+  static const String name = 'LoginPageRoute';
+}
+
+class LoginPageRouteArgs {
+  const LoginPageRouteArgs({this.key});
+
+  final InvalidType key;
+
+  @override
+  String toString() {
+    return 'LoginPageRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [_i2.ListaSolicitacaoPage]
+class ListaSolicitacaoPageRoute
+    extends _i9.PageRouteInfo<ListaSolicitacaoPageRouteArgs> {
+  ListaSolicitacaoPageRoute({InvalidType key})
       : super(
           ListaSolicitacaoPageRoute.name,
           path: '/lista-solicitacao-page',
+          args: ListaSolicitacaoPageRouteArgs(key: key),
         );
 
   static const String name = 'ListaSolicitacaoPageRoute';
 }
 
+class ListaSolicitacaoPageRouteArgs {
+  const ListaSolicitacaoPageRouteArgs({this.key});
+
+  final InvalidType key;
+
+  @override
+  String toString() {
+    return 'ListaSolicitacaoPageRouteArgs{key: $key}';
+  }
+}
+
 /// generated route for
-/// [_i2.DetalhesSolicitacaoPage]
+/// [_i3.FilterPage]
+class FilterPageRoute extends _i9.PageRouteInfo<FilterPageRouteArgs> {
+  FilterPageRoute({
+    InvalidType key,
+    _i12.FiltroSolicidacoes? initial,
+  }) : super(
+          FilterPageRoute.name,
+          path: '/filter-page',
+          args: FilterPageRouteArgs(
+            key: key,
+            initial: initial,
+          ),
+        );
+
+  static const String name = 'FilterPageRoute';
+}
+
+class FilterPageRouteArgs {
+  const FilterPageRouteArgs({
+    this.key,
+    this.initial,
+  });
+
+  final InvalidType key;
+
+  final _i12.FiltroSolicidacoes? initial;
+
+  @override
+  String toString() {
+    return 'FilterPageRouteArgs{key: $key, initial: $initial}';
+  }
+}
+
+/// generated route for
+/// [_i4.DetalhesSolicitacaoPage]
 class DetalhesSolicitacaoPageRoute
-    extends _i8.PageRouteInfo<DetalhesSolicitacaoPageRouteArgs> {
+    extends _i9.PageRouteInfo<DetalhesSolicitacaoPageRouteArgs> {
   DetalhesSolicitacaoPageRoute({
-    _i9.Key? key,
+    InvalidType key,
     required int solicitacaoId,
   }) : super(
           DetalhesSolicitacaoPageRoute.name,
@@ -169,7 +293,7 @@ class DetalhesSolicitacaoPageRouteArgs {
     required this.solicitacaoId,
   });
 
-  final _i9.Key? key;
+  final InvalidType key;
 
   final int solicitacaoId;
 
@@ -180,23 +304,36 @@ class DetalhesSolicitacaoPageRouteArgs {
 }
 
 /// generated route for
-/// [_i3.CriarSolicitacaoPage]
-class CriarSolicitacaoPageRoute extends _i8.PageRouteInfo<void> {
-  const CriarSolicitacaoPageRoute()
+/// [_i5.CriarSolicitacaoPage]
+class CriarSolicitacaoPageRoute
+    extends _i9.PageRouteInfo<CriarSolicitacaoPageRouteArgs> {
+  CriarSolicitacaoPageRoute({InvalidType key})
       : super(
           CriarSolicitacaoPageRoute.name,
           path: '/criar-solicitacao-page',
+          args: CriarSolicitacaoPageRouteArgs(key: key),
         );
 
   static const String name = 'CriarSolicitacaoPageRoute';
 }
 
+class CriarSolicitacaoPageRouteArgs {
+  const CriarSolicitacaoPageRouteArgs({this.key});
+
+  final InvalidType key;
+
+  @override
+  String toString() {
+    return 'CriarSolicitacaoPageRouteArgs{key: $key}';
+  }
+}
+
 /// generated route for
-/// [_i4.VerFotoPage]
-class VerFotoPageRoute extends _i8.PageRouteInfo<VerFotoPageRouteArgs> {
+/// [_i6.VerFotoPage]
+class VerFotoPageRoute extends _i9.PageRouteInfo<VerFotoPageRouteArgs> {
   VerFotoPageRoute({
-    _i9.Key? key,
-    required _i9.ImageProvider<Object> provider,
+    InvalidType key,
+    required _i10.ImageProvider<Object> provider,
   }) : super(
           VerFotoPageRoute.name,
           path: '/ver-foto-page',
@@ -215,9 +352,9 @@ class VerFotoPageRouteArgs {
     required this.provider,
   });
 
-  final _i9.Key? key;
+  final InvalidType key;
 
-  final _i9.ImageProvider<Object> provider;
+  final _i10.ImageProvider<Object> provider;
 
   @override
   String toString() {
@@ -226,36 +363,36 @@ class VerFotoPageRouteArgs {
 }
 
 /// generated route for
-/// [_i5.ProfilePage]
-class ProfilePageRoute extends _i8.PageRouteInfo<void> {
-  const ProfilePageRoute()
+/// [_i7.ProfilePage]
+class ProfilePageRoute extends _i9.PageRouteInfo<ProfilePageRouteArgs> {
+  ProfilePageRoute({InvalidType key})
       : super(
           ProfilePageRoute.name,
           path: '/profile-page',
+          args: ProfilePageRouteArgs(key: key),
         );
 
   static const String name = 'ProfilePageRoute';
 }
 
-/// generated route for
-/// [_i6.LoginPage]
-class LoginPageRoute extends _i8.PageRouteInfo<void> {
-  const LoginPageRoute()
-      : super(
-          LoginPageRoute.name,
-          path: '/',
-        );
+class ProfilePageRouteArgs {
+  const ProfilePageRouteArgs({this.key});
 
-  static const String name = 'LoginPageRoute';
+  final InvalidType key;
+
+  @override
+  String toString() {
+    return 'ProfilePageRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
-/// [_i7.SelecionarLocalizacaoPage]
+/// [_i8.SelecionarLocalizacaoPage]
 class SelecionarLocalizacaoPageRoute
-    extends _i8.PageRouteInfo<SelecionarLocalizacaoPageRouteArgs> {
+    extends _i9.PageRouteInfo<SelecionarLocalizacaoPageRouteArgs> {
   SelecionarLocalizacaoPageRoute({
-    _i9.Key? key,
-    _i10.Posicao? posicao,
+    InvalidType key,
+    _i11.Posicao? posicao,
   }) : super(
           SelecionarLocalizacaoPageRoute.name,
           path: '/selecionar-localizacao-page',
@@ -274,9 +411,9 @@ class SelecionarLocalizacaoPageRouteArgs {
     this.posicao,
   });
 
-  final _i9.Key? key;
+  final InvalidType key;
 
-  final _i10.Posicao? posicao;
+  final _i11.Posicao? posicao;
 
   @override
   String toString() {

@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:minha_cidade/application/auth/auth/auth_bloc.dart';
 import 'package:minha_cidade/domain/solicitacao/filtro_solicitacoes.dart';
 import 'package:minha_cidade/presentation/core/widgets/loader.dart';
+import 'package:minha_cidade/presentation/pages/filter/filter_page.dart';
 import 'package:minha_cidade/presentation/router/app_router.gr.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../application/solicitacao/solicitacao_actor/solicitacao_actor_bloc.dart';
 import '../../../application/solicitacao/solicitacoes/solicitacoes_cubit.dart';
@@ -14,7 +14,9 @@ import '../../../injection.dart';
 import 'widgets/lista_solicitacao_page_body.dart';
 
 class ListaSolicitacaoPage extends StatefulWidget implements AutoRouteWrapper {
-  const ListaSolicitacaoPage({Key? key}) : super(key: key);
+  const ListaSolicitacaoPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<ListaSolicitacaoPage> createState() => _ListaSolicitacaoPageState();
@@ -39,30 +41,32 @@ class ListaSolicitacaoPage extends StatefulWidget implements AutoRouteWrapper {
 }
 
 class _ListaSolicitacaoPageState extends State<ListaSolicitacaoPage> with Loader {
-  bool _onlyUser = false;
-
+  FiltroSolicidacoes? filtro;
   irParaCriarSolicitacao() {
     AutoRouter.of(context).push(const CriarSolicitacaoPageRoute());
   }
 
-  void _onRefresh(RefreshController controller) async {
-    BlocProvider.of<SolicitacoesCubit>(context).load();
-    controller.refreshCompleted();
+  void _reloadSolicitacoes() {
+    context.read<SolicitacoesCubit>().load();
   }
 
   goToProfile() {
     context.router.push(const ProfilePageRoute());
   }
 
-  toggleUserOnly(bool value) {
-    setState(() {
-      _onlyUser = value;
+  goToFilter() {
+    context.router.push<FilterResult>(FilterPageRoute(initial: filtro)).then((result) {
+      if (result != null) {
+        setState(() {
+          if (result.delete) {
+            filtro = null;
+          } else {
+            filtro = result.filtro;
+          }
+          context.read<SolicitacoesCubit>().load(filtro: filtro);
+        });
+      }
     });
-    context.read<SolicitacoesCubit>().load(
-          filtro: FiltroSolicidacoes(
-            onlyCurrentUser: _onlyUser,
-          ),
-        );
   }
 
   @override
@@ -79,20 +83,31 @@ class _ListaSolicitacaoPageState extends State<ListaSolicitacaoPage> with Loader
           ),
         ),
         title: Text(S.of(context).listaSolicitacaoHeader),
-        actions: [],
+        actions: [
+          IconButton(
+            onPressed: goToFilter,
+            icon: Icon(
+              Icons.filter_alt,
+              color: filtro != null ? Colors.red : Colors.white,
+            ),
+          ),
+        ],
       ),
-      body: BlocListener<SolicitacoesCubit, SolicitacoesState>(
-        listener: (context, state) {
-          state.whenOrNull(
-            loading: () => showWaitLoading(),
-            loadSuccess: (_) => hideWaitLoading(),
-            loadFailed: (_) => hideWaitLoading(),
-          );
-        },
-        child: ListSolicitacaoBody(
-          onRefresh: _onRefresh,
-        ),
-      ),
+      body: MultiBlocListener(
+          listeners: [
+            BlocListener<SolicitacoesCubit, SolicitacoesState>(
+              listener: (context, state) {
+                state.whenOrNull(
+                  loading: () => showWaitLoading(),
+                  loadSuccess: (_) => hideWaitLoading(),
+                  loadFailed: (_) => hideWaitLoading(),
+                );
+              },
+            ),
+          ],
+          child: ListSolicitacaoBody(
+            onRetry: _reloadSolicitacoes,
+          )),
       floatingActionButton: FloatingActionButton(
         onPressed: irParaCriarSolicitacao,
         child: const Icon(Icons.add),

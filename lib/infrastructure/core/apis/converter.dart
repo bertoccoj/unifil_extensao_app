@@ -18,7 +18,12 @@ class JsonSerializableConverter extends JsonConverter {
       return null;
     }
 
-    return jsonFactory(values);
+    try {
+      return jsonFactory(values);
+    } catch (e) {
+      print(e);
+      rethrow;
+    }
   }
 
   List<T> _decodeList<T>(Iterable values) => values.where((v) => v != null).map<T>((v) => _decode<T>(v)).toList();

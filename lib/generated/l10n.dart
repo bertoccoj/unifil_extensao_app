@@ -70,6 +70,136 @@ class S {
     );
   }
 
+  /// `Tentar Novamente`
+  String get failureRetry {
+    return Intl.message(
+      'Tentar Novamente',
+      name: 'failureRetry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Utilizar minha localização atual`
+  String get locationUseCurrentPosition {
+    return Intl.message(
+      'Utilizar minha localização atual',
+      name: 'locationUseCurrentPosition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selecionar no mapa`
+  String get locationSelectOnMap {
+    return Intl.message(
+      'Selecionar no mapa',
+      name: 'locationSelectOnMap',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latitude`
+  String get locationLatitude {
+    return Intl.message(
+      'Latitude',
+      name: 'locationLatitude',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Longitude`
+  String get locationLongitude {
+    return Intl.message(
+      'Longitude',
+      name: 'locationLongitude',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Erro ao star posição atual`
+  String get locationErrorCurrentPosition {
+    return Intl.message(
+      'Erro ao star posição atual',
+      name: 'locationErrorCurrentPosition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Posição não selecionada`
+  String get locationErrorPositionNotSelected {
+    return Intl.message(
+      'Posição não selecionada',
+      name: 'locationErrorPositionNotSelected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selecionar filtros`
+  String get filterPageTitle {
+    return Intl.message(
+      'Selecionar filtros',
+      name: 'filterPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Todos`
+  String get filterPageAllOption {
+    return Intl.message(
+      'Todos',
+      name: 'filterPageAllOption',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tipo`
+  String get filterPageType {
+    return Intl.message(
+      'Tipo',
+      name: 'filterPageType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Status`
+  String get filterPageStatus {
+    return Intl.message(
+      'Status',
+      name: 'filterPageStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `localização`
+  String get filterPageLocation {
+    return Intl.message(
+      'localização',
+      name: 'filterPageLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apenas solicitações abertas por min`
+  String get filterPageOnlyCUrrentUser {
+    return Intl.message(
+      'Apenas solicitações abertas por min',
+      name: 'filterPageOnlyCUrrentUser',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Lista de solicitações`
   String get listaSolicitacaoHeader {
     return Intl.message(

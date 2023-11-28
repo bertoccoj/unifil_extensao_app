@@ -14,7 +14,10 @@ class CachedImage extends StatelessWidget {
       fit: BoxFit.cover,
       child: GestureDetector(
         onTap: onClick,
-        child: CachedNetworkImage(imageUrl: url),
+        child: CachedNetworkImage(
+          imageUrl: url,
+          errorWidget: (context, url, error) => Image.asset('assets/images/placeholder.jpg'),
+        ),
       ),
     );
   }

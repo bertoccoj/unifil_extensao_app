@@ -18,7 +18,7 @@ class _$AuthApi extends AuthApi {
 
   @override
   Future<Response<dynamic>> login(LoginPayload payload) {
-    final String $url = '/auth/log-in';
+    final Uri $url = Uri.parse('/auth/log-in');
     final $body = payload;
     final Request $request = Request(
       'POST',
@@ -31,7 +31,7 @@ class _$AuthApi extends AuthApi {
 
   @override
   Future<Response<dynamic>> logOut() {
-    final String $url = '/auth/log-out';
+    final Uri $url = Uri.parse('/auth/log-out');
     final Request $request = Request(
       'POST',
       $url,
@@ -42,7 +42,7 @@ class _$AuthApi extends AuthApi {
 
   @override
   Future<Response<dynamic>> register(RegisterPayload payload) {
-    final String $url = '/auth/register';
+    final Uri $url = Uri.parse('/auth/register');
     final $body = payload;
     final Request $request = Request(
       'POST',
@@ -55,7 +55,7 @@ class _$AuthApi extends AuthApi {
 
   @override
   Future<Response<RawUser>> authenticate() {
-    final String $url = '/auth';
+    final Uri $url = Uri.parse('/auth');
     final Request $request = Request(
       'GET',
       $url,

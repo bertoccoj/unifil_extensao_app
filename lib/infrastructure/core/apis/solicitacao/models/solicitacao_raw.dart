@@ -16,7 +16,7 @@ class SolicitacaoRaw with _$SolicitacaoRaw {
     String? updatedAt,
     required int tipo,
     required int status,
-    required int userId,
+    required int? userId,
     required String descricao,
     required double latitude,
     required double longitude,

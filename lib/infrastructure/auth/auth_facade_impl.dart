@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:minha_cidade/core/i_failure.dart';
 import 'package:minha_cidade/domain/auth/auth_failures.dart';
@@ -13,13 +14,22 @@ import '../core/apis/auth/auth_api.dart';
 @LazySingleton(as: IAuthFacade)
 class AuthFacadeImpl implements IAuthFacade {
   final AuthApi _authApi;
+  final _box = GetStorage();
+  static const _boxTokenKey = '_token';
 
   String? _token;
 
-  AuthFacadeImpl(this._authApi);
-
   @override
   String get token => _token ?? '';
+
+  AuthFacadeImpl(this._authApi);
+
+  @PostConstruct(preResolve: true)
+  Future<void> init() async {
+    final token = _box.read<String>(_boxTokenKey);
+    if (token == null) return;
+    _token = token;
+  }
 
   @override
   Future<Either<IFailure, Unit>> login({
@@ -33,12 +43,11 @@ class AuthFacadeImpl implements IAuthFacade {
 
       if (res.isSuccessful) {
         _token = res.body['data']['token'];
+        await _box.write(_boxTokenKey, _token);
         return right(unit);
       }
 
       return left(AuthFailure.wrongCredentials());
-      // if (res.statusCode == 400) {
-      // }
     } catch (e) {
       return left(AuthFailure.unexpected());
     }
@@ -103,6 +112,7 @@ class AuthFacadeImpl implements IAuthFacade {
     } catch (e) {
       return right(unit);
     } finally {
+      await _box.write(_boxTokenKey, null);
       _token = null;
     }
   }

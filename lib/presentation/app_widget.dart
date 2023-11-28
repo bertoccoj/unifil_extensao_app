@@ -20,6 +20,7 @@ class AppWidget extends StatelessWidget {
       switchInCurve: Curves.easeIn,
       switchOutCurve: Curves.easeOut,
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         title: ConfigReader.appName(),
         localizationsDelegates: const [
           S.delegate,

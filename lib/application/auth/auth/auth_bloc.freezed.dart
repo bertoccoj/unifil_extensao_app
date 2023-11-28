@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'auth_bloc.dart';
 
@@ -23,6 +23,7 @@ mixin _$AuthEvent {
         register,
     required TResult Function(String email) resetPassword,
     required TResult Function() logout,
+    required TResult Function() authenticate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +32,7 @@ mixin _$AuthEvent {
     TResult? Function(String email, String password, String name)? register,
     TResult? Function(String email)? resetPassword,
     TResult? Function()? logout,
+    TResult? Function()? authenticate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +41,7 @@ mixin _$AuthEvent {
     TResult Function(String email, String password, String name)? register,
     TResult Function(String email)? resetPassword,
     TResult Function()? logout,
+    TResult Function()? authenticate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,7 @@ mixin _$AuthEvent {
     required TResult Function(_Register value) register,
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_Logout value) logout,
+    required TResult Function(_Authenticate value) authenticate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +60,7 @@ mixin _$AuthEvent {
     TResult? Function(_Register value)? register,
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_Logout value)? logout,
+    TResult? Function(_Authenticate value)? authenticate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +69,7 @@ mixin _$AuthEvent {
     TResult Function(_Register value)? register,
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_Logout value)? logout,
+    TResult Function(_Authenticate value)? authenticate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -162,6 +168,7 @@ class _$_Login implements _Login {
         register,
     required TResult Function(String email) resetPassword,
     required TResult Function() logout,
+    required TResult Function() authenticate,
   }) {
     return login(email, password);
   }
@@ -173,6 +180,7 @@ class _$_Login implements _Login {
     TResult? Function(String email, String password, String name)? register,
     TResult? Function(String email)? resetPassword,
     TResult? Function()? logout,
+    TResult? Function()? authenticate,
   }) {
     return login?.call(email, password);
   }
@@ -184,6 +192,7 @@ class _$_Login implements _Login {
     TResult Function(String email, String password, String name)? register,
     TResult Function(String email)? resetPassword,
     TResult Function()? logout,
+    TResult Function()? authenticate,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -199,6 +208,7 @@ class _$_Login implements _Login {
     required TResult Function(_Register value) register,
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_Logout value) logout,
+    required TResult Function(_Authenticate value) authenticate,
   }) {
     return login(this);
   }
@@ -210,6 +220,7 @@ class _$_Login implements _Login {
     TResult? Function(_Register value)? register,
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_Logout value)? logout,
+    TResult? Function(_Authenticate value)? authenticate,
   }) {
     return login?.call(this);
   }
@@ -221,6 +232,7 @@ class _$_Login implements _Login {
     TResult Function(_Register value)? register,
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_Logout value)? logout,
+    TResult Function(_Authenticate value)? authenticate,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -328,6 +340,7 @@ class _$_Register implements _Register {
         register,
     required TResult Function(String email) resetPassword,
     required TResult Function() logout,
+    required TResult Function() authenticate,
   }) {
     return register(email, password, name);
   }
@@ -339,6 +352,7 @@ class _$_Register implements _Register {
     TResult? Function(String email, String password, String name)? register,
     TResult? Function(String email)? resetPassword,
     TResult? Function()? logout,
+    TResult? Function()? authenticate,
   }) {
     return register?.call(email, password, name);
   }
@@ -350,6 +364,7 @@ class _$_Register implements _Register {
     TResult Function(String email, String password, String name)? register,
     TResult Function(String email)? resetPassword,
     TResult Function()? logout,
+    TResult Function()? authenticate,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -365,6 +380,7 @@ class _$_Register implements _Register {
     required TResult Function(_Register value) register,
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_Logout value) logout,
+    required TResult Function(_Authenticate value) authenticate,
   }) {
     return register(this);
   }
@@ -376,6 +392,7 @@ class _$_Register implements _Register {
     TResult? Function(_Register value)? register,
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_Logout value)? logout,
+    TResult? Function(_Authenticate value)? authenticate,
   }) {
     return register?.call(this);
   }
@@ -387,6 +404,7 @@ class _$_Register implements _Register {
     TResult Function(_Register value)? register,
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_Logout value)? logout,
+    TResult Function(_Authenticate value)? authenticate,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -479,6 +497,7 @@ class _$_ResetPassword implements _ResetPassword {
         register,
     required TResult Function(String email) resetPassword,
     required TResult Function() logout,
+    required TResult Function() authenticate,
   }) {
     return resetPassword(email);
   }
@@ -490,6 +509,7 @@ class _$_ResetPassword implements _ResetPassword {
     TResult? Function(String email, String password, String name)? register,
     TResult? Function(String email)? resetPassword,
     TResult? Function()? logout,
+    TResult? Function()? authenticate,
   }) {
     return resetPassword?.call(email);
   }
@@ -501,6 +521,7 @@ class _$_ResetPassword implements _ResetPassword {
     TResult Function(String email, String password, String name)? register,
     TResult Function(String email)? resetPassword,
     TResult Function()? logout,
+    TResult Function()? authenticate,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -516,6 +537,7 @@ class _$_ResetPassword implements _ResetPassword {
     required TResult Function(_Register value) register,
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_Logout value) logout,
+    required TResult Function(_Authenticate value) authenticate,
   }) {
     return resetPassword(this);
   }
@@ -527,6 +549,7 @@ class _$_ResetPassword implements _ResetPassword {
     TResult? Function(_Register value)? register,
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_Logout value)? logout,
+    TResult? Function(_Authenticate value)? authenticate,
   }) {
     return resetPassword?.call(this);
   }
@@ -538,6 +561,7 @@ class _$_ResetPassword implements _ResetPassword {
     TResult Function(_Register value)? register,
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_Logout value)? logout,
+    TResult Function(_Authenticate value)? authenticate,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -598,6 +622,7 @@ class _$_Logout implements _Logout {
         register,
     required TResult Function(String email) resetPassword,
     required TResult Function() logout,
+    required TResult Function() authenticate,
   }) {
     return logout();
   }
@@ -609,6 +634,7 @@ class _$_Logout implements _Logout {
     TResult? Function(String email, String password, String name)? register,
     TResult? Function(String email)? resetPassword,
     TResult? Function()? logout,
+    TResult? Function()? authenticate,
   }) {
     return logout?.call();
   }
@@ -620,6 +646,7 @@ class _$_Logout implements _Logout {
     TResult Function(String email, String password, String name)? register,
     TResult Function(String email)? resetPassword,
     TResult Function()? logout,
+    TResult Function()? authenticate,
     required TResult orElse(),
   }) {
     if (logout != null) {
@@ -635,6 +662,7 @@ class _$_Logout implements _Logout {
     required TResult Function(_Register value) register,
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_Logout value) logout,
+    required TResult Function(_Authenticate value) authenticate,
   }) {
     return logout(this);
   }
@@ -646,6 +674,7 @@ class _$_Logout implements _Logout {
     TResult? Function(_Register value)? register,
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_Logout value)? logout,
+    TResult? Function(_Authenticate value)? authenticate,
   }) {
     return logout?.call(this);
   }
@@ -657,6 +686,7 @@ class _$_Logout implements _Logout {
     TResult Function(_Register value)? register,
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_Logout value)? logout,
+    TResult Function(_Authenticate value)? authenticate,
     required TResult orElse(),
   }) {
     if (logout != null) {
@@ -668,6 +698,127 @@ class _$_Logout implements _Logout {
 
 abstract class _Logout implements AuthEvent {
   const factory _Logout() = _$_Logout;
+}
+
+/// @nodoc
+abstract class _$$_AuthenticateCopyWith<$Res> {
+  factory _$$_AuthenticateCopyWith(
+          _$_Authenticate value, $Res Function(_$_Authenticate) then) =
+      __$$_AuthenticateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_AuthenticateCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_Authenticate>
+    implements _$$_AuthenticateCopyWith<$Res> {
+  __$$_AuthenticateCopyWithImpl(
+      _$_Authenticate _value, $Res Function(_$_Authenticate) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Authenticate implements _Authenticate {
+  const _$_Authenticate();
+
+  @override
+  String toString() {
+    return 'AuthEvent.authenticate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Authenticate);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password) login,
+    required TResult Function(String email, String password, String name)
+        register,
+    required TResult Function(String email) resetPassword,
+    required TResult Function() logout,
+    required TResult Function() authenticate,
+  }) {
+    return authenticate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)? login,
+    TResult? Function(String email, String password, String name)? register,
+    TResult? Function(String email)? resetPassword,
+    TResult? Function()? logout,
+    TResult? Function()? authenticate,
+  }) {
+    return authenticate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? login,
+    TResult Function(String email, String password, String name)? register,
+    TResult Function(String email)? resetPassword,
+    TResult Function()? logout,
+    TResult Function()? authenticate,
+    required TResult orElse(),
+  }) {
+    if (authenticate != null) {
+      return authenticate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Login value) login,
+    required TResult Function(_Register value) register,
+    required TResult Function(_ResetPassword value) resetPassword,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_Authenticate value) authenticate,
+  }) {
+    return authenticate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Login value)? login,
+    TResult? Function(_Register value)? register,
+    TResult? Function(_ResetPassword value)? resetPassword,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_Authenticate value)? authenticate,
+  }) {
+    return authenticate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Login value)? login,
+    TResult Function(_Register value)? register,
+    TResult Function(_ResetPassword value)? resetPassword,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_Authenticate value)? authenticate,
+    required TResult orElse(),
+  }) {
+    if (authenticate != null) {
+      return authenticate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Authenticate implements AuthEvent {
+  const factory _Authenticate() = _$_Authenticate;
 }
 
 /// @nodoc
@@ -684,6 +835,8 @@ mixin _$AuthState {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -698,6 +851,8 @@ mixin _$AuthState {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -712,6 +867,8 @@ mixin _$AuthState {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -727,6 +884,8 @@ mixin _$AuthState {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -741,6 +900,8 @@ mixin _$AuthState {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -755,6 +916,8 @@ mixin _$AuthState {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -824,6 +987,8 @@ class _$_Initial implements _Initial {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) {
     return initial();
   }
@@ -841,6 +1006,8 @@ class _$_Initial implements _Initial {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) {
     return initial?.call();
   }
@@ -858,6 +1025,8 @@ class _$_Initial implements _Initial {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -879,6 +1048,8 @@ class _$_Initial implements _Initial {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) {
     return initial(this);
   }
@@ -896,6 +1067,8 @@ class _$_Initial implements _Initial {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) {
     return initial?.call(this);
   }
@@ -913,6 +1086,8 @@ class _$_Initial implements _Initial {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -973,6 +1148,8 @@ class _$_Loading implements _Loading {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) {
     return loading();
   }
@@ -990,6 +1167,8 @@ class _$_Loading implements _Loading {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) {
     return loading?.call();
   }
@@ -1007,6 +1186,8 @@ class _$_Loading implements _Loading {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1028,6 +1209,8 @@ class _$_Loading implements _Loading {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) {
     return loading(this);
   }
@@ -1045,6 +1228,8 @@ class _$_Loading implements _Loading {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) {
     return loading?.call(this);
   }
@@ -1062,6 +1247,8 @@ class _$_Loading implements _Loading {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1123,6 +1310,8 @@ class _$_LoginSuccess implements _LoginSuccess {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) {
     return loginSuccess();
   }
@@ -1140,6 +1329,8 @@ class _$_LoginSuccess implements _LoginSuccess {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) {
     return loginSuccess?.call();
   }
@@ -1157,6 +1348,8 @@ class _$_LoginSuccess implements _LoginSuccess {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (loginSuccess != null) {
@@ -1178,6 +1371,8 @@ class _$_LoginSuccess implements _LoginSuccess {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) {
     return loginSuccess(this);
   }
@@ -1195,6 +1390,8 @@ class _$_LoginSuccess implements _LoginSuccess {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) {
     return loginSuccess?.call(this);
   }
@@ -1212,6 +1409,8 @@ class _$_LoginSuccess implements _LoginSuccess {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (loginSuccess != null) {
@@ -1299,6 +1498,8 @@ class _$_LoginFailed implements _LoginFailed {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) {
     return loginFailed(failure);
   }
@@ -1316,6 +1517,8 @@ class _$_LoginFailed implements _LoginFailed {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) {
     return loginFailed?.call(failure);
   }
@@ -1333,6 +1536,8 @@ class _$_LoginFailed implements _LoginFailed {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (loginFailed != null) {
@@ -1354,6 +1559,8 @@ class _$_LoginFailed implements _LoginFailed {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) {
     return loginFailed(this);
   }
@@ -1371,6 +1578,8 @@ class _$_LoginFailed implements _LoginFailed {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) {
     return loginFailed?.call(this);
   }
@@ -1388,6 +1597,8 @@ class _$_LoginFailed implements _LoginFailed {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (loginFailed != null) {
@@ -1454,6 +1665,8 @@ class _$_RegisterSuccess implements _RegisterSuccess {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) {
     return registerSuccess();
   }
@@ -1471,6 +1684,8 @@ class _$_RegisterSuccess implements _RegisterSuccess {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) {
     return registerSuccess?.call();
   }
@@ -1488,6 +1703,8 @@ class _$_RegisterSuccess implements _RegisterSuccess {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (registerSuccess != null) {
@@ -1509,6 +1726,8 @@ class _$_RegisterSuccess implements _RegisterSuccess {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) {
     return registerSuccess(this);
   }
@@ -1526,6 +1745,8 @@ class _$_RegisterSuccess implements _RegisterSuccess {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) {
     return registerSuccess?.call(this);
   }
@@ -1543,6 +1764,8 @@ class _$_RegisterSuccess implements _RegisterSuccess {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (registerSuccess != null) {
@@ -1630,6 +1853,8 @@ class _$_RegisterFailed implements _RegisterFailed {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) {
     return registerFailed(failure);
   }
@@ -1647,6 +1872,8 @@ class _$_RegisterFailed implements _RegisterFailed {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) {
     return registerFailed?.call(failure);
   }
@@ -1664,6 +1891,8 @@ class _$_RegisterFailed implements _RegisterFailed {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (registerFailed != null) {
@@ -1685,6 +1914,8 @@ class _$_RegisterFailed implements _RegisterFailed {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) {
     return registerFailed(this);
   }
@@ -1702,6 +1933,8 @@ class _$_RegisterFailed implements _RegisterFailed {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) {
     return registerFailed?.call(this);
   }
@@ -1719,6 +1952,8 @@ class _$_RegisterFailed implements _RegisterFailed {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (registerFailed != null) {
@@ -1785,6 +2020,8 @@ class _$_ResetPasswordSuccess implements _ResetPasswordSuccess {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) {
     return resetPasswordSuccess();
   }
@@ -1802,6 +2039,8 @@ class _$_ResetPasswordSuccess implements _ResetPasswordSuccess {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) {
     return resetPasswordSuccess?.call();
   }
@@ -1819,6 +2058,8 @@ class _$_ResetPasswordSuccess implements _ResetPasswordSuccess {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (resetPasswordSuccess != null) {
@@ -1840,6 +2081,8 @@ class _$_ResetPasswordSuccess implements _ResetPasswordSuccess {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) {
     return resetPasswordSuccess(this);
   }
@@ -1857,6 +2100,8 @@ class _$_ResetPasswordSuccess implements _ResetPasswordSuccess {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) {
     return resetPasswordSuccess?.call(this);
   }
@@ -1874,6 +2119,8 @@ class _$_ResetPasswordSuccess implements _ResetPasswordSuccess {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (resetPasswordSuccess != null) {
@@ -1962,6 +2209,8 @@ class _$_ResetPasswordFailed implements _ResetPasswordFailed {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) {
     return resetPasswordFailed(failure);
   }
@@ -1979,6 +2228,8 @@ class _$_ResetPasswordFailed implements _ResetPasswordFailed {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) {
     return resetPasswordFailed?.call(failure);
   }
@@ -1996,6 +2247,8 @@ class _$_ResetPasswordFailed implements _ResetPasswordFailed {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (resetPasswordFailed != null) {
@@ -2017,6 +2270,8 @@ class _$_ResetPasswordFailed implements _ResetPasswordFailed {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) {
     return resetPasswordFailed(this);
   }
@@ -2034,6 +2289,8 @@ class _$_ResetPasswordFailed implements _ResetPasswordFailed {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) {
     return resetPasswordFailed?.call(this);
   }
@@ -2051,6 +2308,8 @@ class _$_ResetPasswordFailed implements _ResetPasswordFailed {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (resetPasswordFailed != null) {
@@ -2118,6 +2377,8 @@ class _$_LogoutSuccess implements _LogoutSuccess {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) {
     return logoutSuccess();
   }
@@ -2135,6 +2396,8 @@ class _$_LogoutSuccess implements _LogoutSuccess {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) {
     return logoutSuccess?.call();
   }
@@ -2152,6 +2415,8 @@ class _$_LogoutSuccess implements _LogoutSuccess {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (logoutSuccess != null) {
@@ -2173,6 +2438,8 @@ class _$_LogoutSuccess implements _LogoutSuccess {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) {
     return logoutSuccess(this);
   }
@@ -2190,6 +2457,8 @@ class _$_LogoutSuccess implements _LogoutSuccess {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) {
     return logoutSuccess?.call(this);
   }
@@ -2207,6 +2476,8 @@ class _$_LogoutSuccess implements _LogoutSuccess {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (logoutSuccess != null) {
@@ -2294,6 +2565,8 @@ class _$_LogoutFailed implements _LogoutFailed {
     required TResult Function(IFailure failure) resetPasswordFailed,
     required TResult Function() logoutSuccess,
     required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
   }) {
     return logoutFailed(failure);
   }
@@ -2311,6 +2584,8 @@ class _$_LogoutFailed implements _LogoutFailed {
     TResult? Function(IFailure failure)? resetPasswordFailed,
     TResult? Function()? logoutSuccess,
     TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
   }) {
     return logoutFailed?.call(failure);
   }
@@ -2328,6 +2603,8 @@ class _$_LogoutFailed implements _LogoutFailed {
     TResult Function(IFailure failure)? resetPasswordFailed,
     TResult Function()? logoutSuccess,
     TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (logoutFailed != null) {
@@ -2349,6 +2626,8 @@ class _$_LogoutFailed implements _LogoutFailed {
     required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
     required TResult Function(_LogoutSuccess value) logoutSuccess,
     required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
   }) {
     return logoutFailed(this);
   }
@@ -2366,6 +2645,8 @@ class _$_LogoutFailed implements _LogoutFailed {
     TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult? Function(_LogoutSuccess value)? logoutSuccess,
     TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
   }) {
     return logoutFailed?.call(this);
   }
@@ -2383,6 +2664,8 @@ class _$_LogoutFailed implements _LogoutFailed {
     TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
     TResult Function(_LogoutSuccess value)? logoutSuccess,
     TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
     required TResult orElse(),
   }) {
     if (logoutFailed != null) {
@@ -2398,5 +2681,362 @@ abstract class _LogoutFailed implements AuthState {
   IFailure get failure;
   @JsonKey(ignore: true)
   _$$_LogoutFailedCopyWith<_$_LogoutFailed> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_AuthenticateuccessCopyWith<$Res> {
+  factory _$$_AuthenticateuccessCopyWith(_$_Authenticateuccess value,
+          $Res Function(_$_Authenticateuccess) then) =
+      __$$_AuthenticateuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_AuthenticateuccessCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$_Authenticateuccess>
+    implements _$$_AuthenticateuccessCopyWith<$Res> {
+  __$$_AuthenticateuccessCopyWithImpl(
+      _$_Authenticateuccess _value, $Res Function(_$_Authenticateuccess) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Authenticateuccess implements _Authenticateuccess {
+  const _$_Authenticateuccess();
+
+  @override
+  String toString() {
+    return 'AuthState.authenticateSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Authenticateuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loginSuccess,
+    required TResult Function(IFailure failure) loginFailed,
+    required TResult Function() registerSuccess,
+    required TResult Function(IFailure failure) registerFailed,
+    required TResult Function() resetPasswordSuccess,
+    required TResult Function(IFailure failure) resetPasswordFailed,
+    required TResult Function() logoutSuccess,
+    required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
+  }) {
+    return authenticateSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loginSuccess,
+    TResult? Function(IFailure failure)? loginFailed,
+    TResult? Function()? registerSuccess,
+    TResult? Function(IFailure failure)? registerFailed,
+    TResult? Function()? resetPasswordSuccess,
+    TResult? Function(IFailure failure)? resetPasswordFailed,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
+  }) {
+    return authenticateSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loginSuccess,
+    TResult Function(IFailure failure)? loginFailed,
+    TResult Function()? registerSuccess,
+    TResult Function(IFailure failure)? registerFailed,
+    TResult Function()? resetPasswordSuccess,
+    TResult Function(IFailure failure)? resetPasswordFailed,
+    TResult Function()? logoutSuccess,
+    TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
+    required TResult orElse(),
+  }) {
+    if (authenticateSuccess != null) {
+      return authenticateSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_LoginFailed value) loginFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
+    required TResult Function(_ResetPasswordSuccess value) resetPasswordSuccess,
+    required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
+    required TResult Function(_LogoutSuccess value) logoutSuccess,
+    required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
+  }) {
+    return authenticateSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_LoginFailed value)? loginFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
+    TResult? Function(_ResetPasswordSuccess value)? resetPasswordSuccess,
+    TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
+    TResult? Function(_LogoutSuccess value)? logoutSuccess,
+    TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
+  }) {
+    return authenticateSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_LoginFailed value)? loginFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
+    TResult Function(_ResetPasswordSuccess value)? resetPasswordSuccess,
+    TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
+    TResult Function(_LogoutSuccess value)? logoutSuccess,
+    TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
+    required TResult orElse(),
+  }) {
+    if (authenticateSuccess != null) {
+      return authenticateSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Authenticateuccess implements AuthState {
+  const factory _Authenticateuccess() = _$_Authenticateuccess;
+}
+
+/// @nodoc
+abstract class _$$_AuthenticateFailedCopyWith<$Res> {
+  factory _$$_AuthenticateFailedCopyWith(_$_AuthenticateFailed value,
+          $Res Function(_$_AuthenticateFailed) then) =
+      __$$_AuthenticateFailedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({IFailure failure});
+}
+
+/// @nodoc
+class __$$_AuthenticateFailedCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$_AuthenticateFailed>
+    implements _$$_AuthenticateFailedCopyWith<$Res> {
+  __$$_AuthenticateFailedCopyWithImpl(
+      _$_AuthenticateFailed _value, $Res Function(_$_AuthenticateFailed) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = null,
+  }) {
+    return _then(_$_AuthenticateFailed(
+      null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as IFailure,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_AuthenticateFailed implements _AuthenticateFailed {
+  const _$_AuthenticateFailed(this.failure);
+
+  @override
+  final IFailure failure;
+
+  @override
+  String toString() {
+    return 'AuthState.authenticateFailed(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AuthenticateFailed &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AuthenticateFailedCopyWith<_$_AuthenticateFailed> get copyWith =>
+      __$$_AuthenticateFailedCopyWithImpl<_$_AuthenticateFailed>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loginSuccess,
+    required TResult Function(IFailure failure) loginFailed,
+    required TResult Function() registerSuccess,
+    required TResult Function(IFailure failure) registerFailed,
+    required TResult Function() resetPasswordSuccess,
+    required TResult Function(IFailure failure) resetPasswordFailed,
+    required TResult Function() logoutSuccess,
+    required TResult Function(IFailure failure) logoutFailed,
+    required TResult Function() authenticateSuccess,
+    required TResult Function(IFailure failure) authenticateFailed,
+  }) {
+    return authenticateFailed(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loginSuccess,
+    TResult? Function(IFailure failure)? loginFailed,
+    TResult? Function()? registerSuccess,
+    TResult? Function(IFailure failure)? registerFailed,
+    TResult? Function()? resetPasswordSuccess,
+    TResult? Function(IFailure failure)? resetPasswordFailed,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(IFailure failure)? logoutFailed,
+    TResult? Function()? authenticateSuccess,
+    TResult? Function(IFailure failure)? authenticateFailed,
+  }) {
+    return authenticateFailed?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loginSuccess,
+    TResult Function(IFailure failure)? loginFailed,
+    TResult Function()? registerSuccess,
+    TResult Function(IFailure failure)? registerFailed,
+    TResult Function()? resetPasswordSuccess,
+    TResult Function(IFailure failure)? resetPasswordFailed,
+    TResult Function()? logoutSuccess,
+    TResult Function(IFailure failure)? logoutFailed,
+    TResult Function()? authenticateSuccess,
+    TResult Function(IFailure failure)? authenticateFailed,
+    required TResult orElse(),
+  }) {
+    if (authenticateFailed != null) {
+      return authenticateFailed(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_LoginFailed value) loginFailed,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+    required TResult Function(_RegisterFailed value) registerFailed,
+    required TResult Function(_ResetPasswordSuccess value) resetPasswordSuccess,
+    required TResult Function(_ResetPasswordFailed value) resetPasswordFailed,
+    required TResult Function(_LogoutSuccess value) logoutSuccess,
+    required TResult Function(_LogoutFailed value) logoutFailed,
+    required TResult Function(_Authenticateuccess value) authenticateSuccess,
+    required TResult Function(_AuthenticateFailed value) authenticateFailed,
+  }) {
+    return authenticateFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_LoginFailed value)? loginFailed,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+    TResult? Function(_RegisterFailed value)? registerFailed,
+    TResult? Function(_ResetPasswordSuccess value)? resetPasswordSuccess,
+    TResult? Function(_ResetPasswordFailed value)? resetPasswordFailed,
+    TResult? Function(_LogoutSuccess value)? logoutSuccess,
+    TResult? Function(_LogoutFailed value)? logoutFailed,
+    TResult? Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult? Function(_AuthenticateFailed value)? authenticateFailed,
+  }) {
+    return authenticateFailed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_LoginFailed value)? loginFailed,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    TResult Function(_RegisterFailed value)? registerFailed,
+    TResult Function(_ResetPasswordSuccess value)? resetPasswordSuccess,
+    TResult Function(_ResetPasswordFailed value)? resetPasswordFailed,
+    TResult Function(_LogoutSuccess value)? logoutSuccess,
+    TResult Function(_LogoutFailed value)? logoutFailed,
+    TResult Function(_Authenticateuccess value)? authenticateSuccess,
+    TResult Function(_AuthenticateFailed value)? authenticateFailed,
+    required TResult orElse(),
+  }) {
+    if (authenticateFailed != null) {
+      return authenticateFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AuthenticateFailed implements AuthState {
+  const factory _AuthenticateFailed(final IFailure failure) =
+      _$_AuthenticateFailed;
+
+  IFailure get failure;
+  @JsonKey(ignore: true)
+  _$$_AuthenticateFailedCopyWith<_$_AuthenticateFailed> get copyWith =>
       throw _privateConstructorUsedError;
 }
